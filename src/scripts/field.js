@@ -9,7 +9,7 @@ export const addPlant = (objSeed) => {
         arrField.push(objSeed);
     } else {
         console.log("It's an array!")
-        const seeds = objSeed.slice();
+        const seeds = objSeed;
         // Loops through the objSeed copy
         // it takes each object, saves that object to moveCorn,
         // then pushes moveCorn to the main array. If we don't save it to moveCorn
@@ -19,6 +19,7 @@ export const addPlant = (objSeed) => {
               arrField.push(moveCorn);
         }
     }  
+    console.log("CURRENT SEEDS IN FIELD", arrField);
 }
 
 export const usePlants = () => { return arrField };
