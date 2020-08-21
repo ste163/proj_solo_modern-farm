@@ -2,7 +2,7 @@ const arrField = [];
 
 export const addPlant = (objSeed) => {
     //Check to see if objSeed is an object or an array
-    //If it's an array, we might need to slice it.
+    //If it's an array, we might need to slice to make a copy
     //To break the objects from the array.
     if (Array.isArray(objSeed) === false) {
         console.log("Not an array, so it is an object! Pushing to field.");
@@ -12,7 +12,8 @@ export const addPlant = (objSeed) => {
         const seeds = objSeed.slice();
         // Loops through the objSeed copy
         // it takes each object, saves that object to moveCorn,
-        // then pushes moveCorn to the main array.
+        // then pushes moveCorn to the main array. If we don't save it to moveCorn
+        // then it only saves the index value and not the object.
         for (const seed in seeds) {
               const moveCorn = seeds[seed];
               arrField.push(moveCorn);
@@ -20,7 +21,4 @@ export const addPlant = (objSeed) => {
     }  
 }
 
-export const usePlants = () => {
-    let arrFieldCopy = arrField;
-    return arrFieldCopy
-};
+export const usePlants = () => { return arrField };

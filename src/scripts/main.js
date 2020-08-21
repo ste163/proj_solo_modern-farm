@@ -31,6 +31,6 @@ const usedPlants = usePlants();
 // console.log(cornSeed);
 
 //Tests to see if field.js is working
-console.log("ADD PLANT FUNCT", addPlant(createWheat()));
+console.log("ADD PLANT FUNCT", addPlant(createCorn()));
 console.log("USE PLANTS FUNCT", usePlants());
 console.log(plantSeeds(yearlyPlan));
