@@ -9,6 +9,7 @@ import { createWheat } from "./seeds/wheat.js";
 import { createCorn } from "./seeds/corn.js";
 import { addPlant } from "./field.js";
 import { usePlants } from "./field.js";
+import { plantSeeds } from "./tractor.js";
 
 //Stores the objs into varaibles so we can use them
 const yearlyPlan = createPlan();
@@ -21,7 +22,7 @@ const cornSeed = createCorn();
 // const addedPlant = addPlant();
 const usedPlants = usePlants();
 
-// console.log(yearlyPlan);
+// console.log("YEARLY PLAN IS", yearlyPlan);
 // console.log(asparagusSeed);
 // console.log(potatoSeed);
 // console.log(soybeanSeed);
@@ -32,3 +33,4 @@ const usedPlants = usePlants();
 //Tests to see if field.js is working
 console.log("ADD PLANT FUNCT", addPlant(createWheat()));
 console.log("USE PLANTS FUNCT", usePlants());
+console.log(plantSeeds(yearlyPlan));
