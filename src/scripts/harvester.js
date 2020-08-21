@@ -1,11 +1,41 @@
 
 
-export const harvestPlants = (arrPlants) => {
-    console.log("CURRENT PLANTS TO HARVEST", arrPlants);
+export const harvestPlants = (arrPlantsInField) => {
+
+    const arrProduce = [];
+
+    console.log("CURRENT PLANTS TO HARVEST", arrPlantsInField);
     debugger;
 
-    for (const plant of arrPlants) {
-        console.log(plant.output);
+    for (const plant of arrPlantsInField) {
+
+        switch(plant.type) {
+            case "Corn":
+                console.log("Corn");
+                console.log(plant)
+            break;
+            case "Asparagus":
+                console.log("Asparagus");
+            break;
+            case "Soybean":
+                console.log("Soybean");
+            break;
+            case "Potato":
+                console.log("Potato");
+            break;
+            case "Wheat":
+                console.log("Wheat");
+            break;
+            case "Sunflower":
+                console.log("Sunflower")
+            break;
+        }
+        //if the plant.type === what ever
+        // For each item, we need to
+        // Find out what the object is
+        // Decide what to do based on the object
+        // We probably need to do another switch statement
+        // console.log(plant.output);
     }
 
     //Function Goal
@@ -15,7 +45,4 @@ export const harvestPlants = (arrPlants) => {
         //The EXCEPTION is corn. Only take half of that ouput, because we're "selling" half of it.
     //At the end, return the produce array
 
-
-
-    // function will return an array of seed objects
-}
+};
