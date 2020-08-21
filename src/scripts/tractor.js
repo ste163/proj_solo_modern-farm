@@ -1,4 +1,4 @@
-import { usePlants, addPlant } from "./field.js";
+import { addPlant } from "./field.js";
 import { createAsparagus } from "./seeds/asparagus.js";
 import { createPotato } from "./seeds/potato.js";
 import { createSoybean } from "./seeds/soybean.js";
@@ -6,12 +6,23 @@ import { createSunflower } from "./seeds/sunflower.js";
 import { createWheat } from "./seeds/wheat.js";
 import { createCorn } from "./seeds/corn.js";
 
+//PURPOSE OF FUNCTION
+//This function takes a seed plan
+//Makes a copy of that plan (probably not needed)
+//Loops through the first array of that plan
+//Loops into the inside arrays of that plan
+//And creates seeds based on what those plans are.
+//Once a seed is created, it is then added to the field using the
+//addPlant function.
+
 export const plantSeeds = (plan) => {
     //The plan is an array with multiple arrays inside
     console.log(plan); //WORKING
+    
     //make a slice copy of the main array
     const planCopy = plan.slice();
     console.log(planCopy); //WORKING
+
     //Loop through the main array
     for (plan of planCopy) {
         console.log("ENTERING FIRST ARRAY", plan); //ITERATING OVER THE FIRST ARRAY AND RETURNING THE INSIDE ARRAYS
@@ -21,35 +32,25 @@ export const plantSeeds = (plan) => {
             //switch statement for what the name is
             let seedInPlan = seed;
             switch (seedInPlan) {
-                case 'Asparagus': //WORKING
-                addPlant(createAsparagus());
+                case 'Asparagus':
+                    addPlant(createAsparagus());
                 break;
-                case 'Corn': //WORKING                
-                addPlant(createCorn());
+                case 'Corn':               
+                    addPlant(createCorn());
                 break;
                 case 'Potato':
-                console.log("SWITCH Potato");
-                addPlant(createPotato());
+                    addPlant(createPotato());
                 break;
                 case 'Wheat':
-                console.log("SWITCH Wheat");
+                    addPlant(createWheat());
                 break;
                 case 'Soybean':
-                console.log("SWITCH Soybean");
+                    addPlant(createSoybean());
                 break;
                 case 'Sunflower':
-                console.log("SWITCH Sunflower");
+                    addPlant(createSunflower());
                 break;
             }
-
-            //If the name matches the switch, create the seed and push to array.
         }
-        // console.log("ARRAY OF CREATED PLANTS", arrCreatedSeeds);
     }
-        
-        //DONE - Loop through the array.
-            //DONE - Based on what the array's name is, match that with its corresponding createSeed function.
-            //After the seed is created, add it to the array
-            //Continue until everything has been created, then go to the next array
-    //Once everything has been added, return the sliced array.
 }
