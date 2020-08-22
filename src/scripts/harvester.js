@@ -1,42 +1,57 @@
+const arrProduce = [];
+
+// harvesterMachine takes the looping and pushing
+// to the produce array out of the switch statement
+// to remove repeated code blocks.
+const harvesterMachine = (objPlant) => {
+    debugger;
+    const grownPlant = objPlant.output;
+    let counter = grownPlant
+    if (objPlant.type === "Corn") {
+        counter = counter / 2;
+    } else {
+        counter = counter;
+    };
+    while (counter > 0) {
+        let newPlant = {
+            type: objPlant.type,
+            height: objPlant.height,
+            output: objPlant.output
+        }    
+        arrProduce.push(newPlant);
+        counter--;
+    };
+}
 
 
 export const harvestPlants = (arrPlantsInField) => {
 
-    const arrProduce = [];
-
     console.log("CURRENT PLANTS TO HARVEST", arrPlantsInField);
-    debugger;
 
     for (const plant of arrPlantsInField) {
 
         switch(plant.type) {
             case "Corn":
-                console.log("Corn");
-                console.log(plant)
+                harvesterMachine(plant);
             break;
             case "Asparagus":
-                console.log("Asparagus");
+                harvesterMachine(plant);
             break;
             case "Soybean":
-                console.log("Soybean");
+                harvesterMachine(plant);
             break;
             case "Potato":
-                console.log("Potato");
+                harvesterMachine(plant);
             break;
             case "Wheat":
-                console.log("Wheat");
+                harvesterMachine(plant);
             break;
             case "Sunflower":
-                console.log("Sunflower")
+                harvesterMachine(plant);
             break;
         }
-        //if the plant.type === what ever
-        // For each item, we need to
-        // Find out what the object is
-        // Decide what to do based on the object
-        // We probably need to do another switch statement
-        // console.log(plant.output);
     }
+    console.log("WE PRODUCED/HARVESTED", arrProduce);
 
     //Function Goal
     //DONE - Add the parameter of our array of seeds in the field
@@ -46,3 +61,5 @@ export const harvestPlants = (arrPlantsInField) => {
     //At the end, return the produce array
 
 };
+
+

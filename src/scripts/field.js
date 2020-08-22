@@ -5,10 +5,10 @@ export const addPlant = (objSeed) => {
     //If it's an array, we might need to slice to make a copy
     //To break the objects from the array.
     if (Array.isArray(objSeed) === false) {
-        console.log("Not an array, so it is an object! Pushing to field.");
+        // console.log("Not an array, so it is an object! Pushing to field.");
         arrField.push(objSeed);
     } else {
-        console.log("It's an array!")
+        // console.log("It's an array!")
         const seeds = objSeed;
         // Loops through the objSeed copy
         // it takes each object, saves that object to moveCorn,
