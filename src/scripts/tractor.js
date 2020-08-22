@@ -17,18 +17,17 @@ import { createCorn } from "./seeds/corn.js";
 
 export const plantSeeds = (plan) => {
     //The plan is an array with multiple arrays inside
-    console.log(plan); //WORKING
+    // console.log(plan); //WORKING
     
     //make a slice copy of the main array
     const planCopy = plan.slice();
-    console.log(planCopy); //WORKING
+    // console.log(planCopy); //WORKING
 
     //Loop through the main array
     for (plan of planCopy) {
-        console.log("ENTERING FIRST ARRAY", plan); //ITERATING OVER THE FIRST ARRAY AND RETURNING THE INSIDE ARRAYS
+        //ITERATING OVER THE FIRST ARRAY AND RETURNING THE INSIDE ARRAYS
         let seed = plan;
         for (seed of plan) {
-            console.log("ENTERING SECOND ARRAY", seed); //WORKING
             //switch statement for what the name is
             let seedInPlan = seed;
             switch (seedInPlan) {
