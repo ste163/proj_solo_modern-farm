@@ -8,7 +8,6 @@ import { createCorn } from "./seeds/corn.js";
 
 //PURPOSE OF FUNCTION
 //This function takes a seed plan
-//Makes a copy of that plan (probably not needed)
 //Loops through the first array of that plan
 //Loops into the inside arrays of that plan
 //And creates seeds based on what those plans are.
@@ -17,20 +16,12 @@ import { createCorn } from "./seeds/corn.js";
 
 export const plantSeeds = (plan) => {
     //The plan is an array with multiple arrays inside
-    // console.log(plan); //WORKING
-    
-    //make a slice copy of the main array
-    const planCopy = plan.slice();
-    // console.log(planCopy); //WORKING
-
     //Loop through the main array
-    for (plan of planCopy) {
-        //ITERATING OVER THE FIRST ARRAY AND RETURNING THE INSIDE ARRAYS
-        let seed = plan;
-        for (seed of plan) {
-            //switch statement for what the name is
-            let seedInPlan = seed;
-            switch (seedInPlan) {
+    for (const planItem of plan) {
+        //Loop through the nested array
+        for (const seed of planItem) {
+            //switch statement for which seed to make
+            switch (seed) {
                 case 'Asparagus':
                     addPlant(createAsparagus());
                 break;
