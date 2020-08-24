@@ -3,19 +3,15 @@ const arrProduce = [];
 // harvesterMachine takes the looping and pushing
 // to the produce array out of the switch statement
 // to remove repeated code blocks.
-const harvesterMachine = (objPlant) => {
-    const grownPlant = objPlant.output;
+const harvesterMachine = (plantObj) => {
+    const grownPlant = plantObj.output;
     let counter = grownPlant
-    if (objPlant.type === "Corn") {
-        counter = counter / 2;
-    } else {
-        counter = counter;
-    };
+    plantObj.type === "Corn" ? counter = counter / 2 : counter = counter;
     while (counter > 0) {
         let newPlant = {
-            type: objPlant.type,
-            height: objPlant.height,
-            output: objPlant.output
+            type: plantObj.type,
+            height: plantObj.height,
+            output: plantObj.output
         }    
         arrProduce.push(newPlant);
         counter--;
@@ -31,7 +27,7 @@ const harvesterMachine = (objPlant) => {
 
 export const harvestPlants = (arrPlantsInField) => {
 
-    console.log("CURRENT PLANTS TO HARVEST", arrPlantsInField);
+    // console.log("CURRENT PLANTS TO HARVEST", arrPlantsInField);
 
     for (const plant of arrPlantsInField) {
 
@@ -56,7 +52,7 @@ export const harvestPlants = (arrPlantsInField) => {
             break;
         }
     }
-    console.log("WE HARVESTED", arrProduce);
+    // console.log("WE HARVESTED", arrProduce);
     return arrProduce;
 };
 

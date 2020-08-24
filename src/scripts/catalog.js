@@ -5,7 +5,6 @@
 //of the food items. USE BELOW CODE
 
 export const Catalog = (arrHarvested) => {
-    console.log("ENTERING CATALOG");
     const containerHTML = document.querySelector(".container"); // To enter information into the DOM, you must store its selector.
     let representationHTML = ""; // You must then store the HTML strings in their own container
 
@@ -21,7 +20,6 @@ export const Catalog = (arrHarvested) => {
 containerHTML.innerHTML += `
     ${representationHTML}
 `
-console.log("EXITING CATALOG");
 };
 
 
