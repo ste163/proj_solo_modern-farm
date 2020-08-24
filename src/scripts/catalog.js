@@ -1,8 +1,8 @@
- //FUNCTION GOAL
-//DONE - accepts the harvested food array as input
-//DONE - iterate the food array objects
-//as you iterate, the main should have its inner HTML appended with a representation
-//of the food items. USE BELOW CODE
+//FUNCTION GOAL
+//accept the harvested food array from harvester.js as input
+//iterate the food array objects
+    //as you iterate, the index should have its inner HTML
+    //appended with a representation of the food items.
 
 export const Catalog = (arrHarvested) => {
     const containerHTML = document.querySelector(".container"); // To enter information into the DOM, you must store its selector.
@@ -10,13 +10,13 @@ export const Catalog = (arrHarvested) => {
 
     for (const obj in arrHarvested) { //Looping through the array of objects, we append each item to our growing HTML list.
         const objHarvested = arrHarvested[obj];
-        //Representation MUST have += or you'll overwrite and only have 1
+        //Representation MUST have += or you'll overwrite and only have 1 item
         representationHTML += `
         <section class="plant">${objHarvested.type}</section>
         `;
     }
 
-//To add to the DOM, you MUST have the += because we don't want to overwrite but append.
+//To add to the DOM, you MUST have the += for the same reason as above
 containerHTML.innerHTML += `
     ${representationHTML}
 `

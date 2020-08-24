@@ -19,11 +19,11 @@ const harvesterMachine = (plantObj) => {
 }
 
     //Function Goal
-    //DONE - Add the parameter of our array of seeds in the field
-    //DONE - Iterate through each plant, getting its output property value.
-    //DONE - Based on that objects value, we add that many to a new array, called something like arrProduce
-        //DONE - The EXCEPTION is corn. Only take half of that ouput, because we're "selling" half of it.
-    //DONE - At the end, return the produce array
+    //Use the parameter of our array of seeds in the field
+    //Iterate through each plant, getting its output property value.
+    //Based on that object's value, we add that many to a new array, called something like arrProduce
+        //The EXCEPTION is corn. Only take half of that ouput, because we're "selling" half of it.
+    //At the end, return the produce array
 
 export const harvestPlants = (arrPlantsInField) => {
 
