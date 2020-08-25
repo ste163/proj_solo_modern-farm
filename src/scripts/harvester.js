@@ -1,4 +1,5 @@
 const arrProduce = [];
+const arrTable = [];
 
 //Counts are for table layout
 let cornCount = 0;
@@ -36,35 +37,93 @@ const harvesterMachine = (plantObj) => {
 export const harvestPlants = (arrPlantsInField) => {
     // console.log("CURRENT PLANTS TO HARVEST", arrPlantsInField);
     for (const plant of arrPlantsInField) {
-
         switch(plant.type) {
             case "Corn":
                 harvesterMachine(plant);
-                cornCount += (plant.output / 2);
             break;
             case "Asparagus":
                 harvesterMachine(plant);
-                asparagusCount += plant.output;
             break;
             case "Soybean":
                 harvesterMachine(plant);
             break;
             case "Potato":
                 harvesterMachine(plant);
-                potatoCount += plant.output 
             break;
             case "Wheat":
                 harvesterMachine(plant);
-                wheatCount += plant.output;
             break;
             case "Sunflower":
                 harvesterMachine(plant);
-                sunflowerCount += plant.out;
             break;
         }
     }
     // console.log("WE HARVESTED", arrProduce);
     return arrProduce;
 };
+
+//FUNCTION GOAL
+//Return an array of objects
+//Containing the produce name
+//and its output to be used
+//in a table layout.
+export const harvestTable = (arrPlantsInTheField) => {
+    for (const plant of arrPlantsInTheField) {
+        switch(plant.type) {
+            case "Corn":
+                cornCount += (plant.output / 2);
+            break;
+            case "Asparagus":
+                asparagusCount += plant.output;
+            break;
+            case "Soybean":
+                soybeanCount += plant.output;
+            break;
+            case "Potato":
+                potatoCount += plant.output 
+            break;
+            case "Wheat":
+                wheatCount += plant.output;
+            break;
+            case "Sunflower":
+                sunflowerCount += plant.output;
+            break;
+        }
+    }
+
+    //After adding to each count
+    //Make new objects for the table layout
+    const cornObj = {
+        produce: "Corn",
+        harvest: cornCount
+    }
+    const asparagusObj = {
+        produce: "Asparagus",
+        harvest: asparagusCount
+    }
+    const soybeanObj = {
+        produce: "Soybean",
+        harvest: soybeanCount
+    }
+    const potatoObj = {
+        produce: "Potato",
+        harvest: potatoCount
+    }
+    const wheatObj = {
+        produce: "Wheat",
+        harvest: wheatCount
+    }
+    const sunflowerObj = {
+        produce: "Sunflower",
+        harvest: sunflowerCount
+    }
+    arrTable.push(sunflowerObj);
+    arrTable.push(wheatObj);
+    arrTable.push(potatoObj);
+    arrTable.push(soybeanObj);
+    arrTable.push(asparagusObj);
+    arrTable.push(cornObj);
+    return arrTable;
+}
 
 
