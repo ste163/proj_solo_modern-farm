@@ -62,6 +62,9 @@ export const harvestPlants = (arrPlantsInField) => {
     return arrProduce;
 };
 
+
+
+
 //FUNCTION GOAL
 //Return an array of objects
 //Containing the produce name
