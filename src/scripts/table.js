@@ -7,6 +7,7 @@ export const TableLayout = (arrTable) => {
         representationHTML += `
         <tr>
             <td>${objTable.produce}</td>
+            <td>${objTable.icon}</td>
             <td>${objTable.harvest}</td>
         </tr>
         `

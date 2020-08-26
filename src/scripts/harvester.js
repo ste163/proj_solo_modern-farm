@@ -1,6 +1,9 @@
 const arrProduce = [];
 const arrTable = [];
 
+//Counter for adding ID
+let IDincrementer = 1;
+
 //Counts are for table layout
 let cornCount = 0;
 let potatoCount = 0;
@@ -19,10 +22,13 @@ const harvesterMachine = (plantObj) => {
     plantObj.type === "Corn" ? counter = (counter / 2) : counter = counter;
     while (counter > 0) {
         let newPlant = {
+            id: IDincrementer,
             type: plantObj.type,
             height: plantObj.height,
-            output: plantObj.output
+            output: plantObj.output,
+            icon: plantObj.icon
         }    
+        IDincrementer++;
         arrProduce.push(newPlant);
         counter--;
     };
@@ -98,27 +104,33 @@ export const harvestTable = (arrPlantsInTheField) => {
     //Make new objects for the table layout
     const cornObj = {
         produce: "Corn",
-        harvest: cornCount
+        harvest: cornCount,
+        icon: "&#127805"
     }
     const asparagusObj = {
         produce: "Asparagus",
-        harvest: asparagusCount
+        harvest: asparagusCount,
+        icon: "&#127807"
     }
     const soybeanObj = {
-        produce: "Soybean",
-        harvest: soybeanCount
+        produce: "Soybeans",
+        harvest: soybeanCount,
+        icon: "&#127793"
     }
     const potatoObj = {
-        produce: "Potato",
-        harvest: potatoCount
+        produce: "Potatos",
+        harvest: potatoCount,
+        icon: "&#129364"
     }
     const wheatObj = {
         produce: "Wheat",
-        harvest: wheatCount
+        harvest: wheatCount,
+        icon: "&#127806"
     }
     const sunflowerObj = {
-        produce: "Sunflower",
-        harvest: sunflowerCount
+        produce: "Sunflowers",
+        harvest: sunflowerCount,
+        icon: "&#127803"
     }
     arrTable.push(sunflowerObj);
     arrTable.push(wheatObj);

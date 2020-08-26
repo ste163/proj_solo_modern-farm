@@ -12,7 +12,7 @@ export const Catalog = (arrHarvested) => {
         const objHarvested = arrHarvested[obj];
         //Representation MUST have += or you'll overwrite and only have 1 item
         representationHTML += `
-        <section class="plant">${objHarvested.type}</section>
+        <section class="plant">${objHarvested.icon}</section>
         `;
     }
 
