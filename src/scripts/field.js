@@ -11,9 +11,6 @@ export const addPlant = (seedObj) => {
         seedObj.forEach(seed => {
             arrField.push(seed);
         })
-        // for (const seed in seedObj) {
-        //       arrField.push(seedObj[seed]);
-        // }
     }  
     // console.log("CURRENT SEEDS IN FIELD", arrField);
 }

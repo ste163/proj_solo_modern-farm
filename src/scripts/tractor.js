@@ -19,6 +19,7 @@ export const plantSeeds = (plan) => {
     //Loop through the main array
     for (const planItem of plan) {
         //Loop through the nested array
+        //could also be a forEach loop like: planItem.forEach(seed => ...switch...)
         for (const seed of planItem) {
             //switch statement for which seed to make
             switch (seed) {
