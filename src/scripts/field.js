@@ -8,9 +8,12 @@ export const addPlant = (seedObj) => {
         arrField.push(seedObj);
     } else {
         // console.log("It's an array!")
-        for (const seed in seedObj) {
-              arrField.push(seedObj[seed]);
-        }
+        seedObj.forEach(seed => {
+            arrField.push(seed);
+        })
+        // for (const seed in seedObj) {
+        //       arrField.push(seedObj[seed]);
+        // }
     }  
     // console.log("CURRENT SEEDS IN FIELD", arrField);
 }
