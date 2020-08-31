@@ -14,14 +14,12 @@ import { createCorn } from "./seeds/corn.js";
 //Once a seed is created, it is then added to the field using the
 //addPlant function.
 
-export const plantSeeds = (plan) => {
+export const plantSeeds = (planArray) => {
     //The plan is an array with multiple arrays inside
-    //Loop through the main array
-    for (const planItem of plan) {
-        //Loop through the nested array
-        //could also be a forEach loop like: planItem.forEach(seed => ...switch...)
-        for (const seed of planItem) {
-            //switch statement for which seed to make
+    //Loop through the main array using  map
+    //loop into the inner array for the seed
+    planArray.map(planItem =>{
+        planItem.map(seed =>{
             switch (seed) {
                 case 'Asparagus':
                     addPlant(createAsparagus());
@@ -42,6 +40,6 @@ export const plantSeeds = (plan) => {
                     addPlant(createSunflower());
                 break;
             }
-        }
-    }
+        })
+    })
 }

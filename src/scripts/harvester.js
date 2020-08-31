@@ -42,7 +42,7 @@ const harvesterMachine = (plantObj) => {
     //At the end, return the produce array
 export const harvestPlants = (arrPlantsInField) => {
     // console.log("CURRENT PLANTS TO HARVEST", arrPlantsInField);
-    for (const plant of arrPlantsInField) {
+    arrPlantsInField.map(plant => {
         switch(plant.type) {
             case "Corn":
                 harvesterMachine(plant);
@@ -63,7 +63,7 @@ export const harvestPlants = (arrPlantsInField) => {
                 harvesterMachine(plant);
             break;
         }
-    }
+    })
     // console.log("WE HARVESTED", arrProduce);
     return arrProduce;
 };
@@ -77,7 +77,7 @@ export const harvestPlants = (arrPlantsInField) => {
 //and its output to be used
 //in a table layout.
 export const harvestTable = (arrPlantsInTheField) => {
-    for (const plant of arrPlantsInTheField) {
+    arrPlantsInTheField.map(plant => {
         switch(plant.type) {
             case "Corn":
                 cornCount += (plant.output / 2);
@@ -98,7 +98,7 @@ export const harvestTable = (arrPlantsInTheField) => {
                 sunflowerCount += plant.output;
             break;
         }
-    }
+    })
 
     //After adding to each count
     //Make new objects for the table layout
